@@ -5,7 +5,7 @@ import OAuth from "../components/OAuth";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { toast } from "react-toastify";
 
-export default function SignIn() {
+export default function Admin() {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     email: "",
@@ -29,7 +29,7 @@ export default function SignIn() {
         password
       );
       if (userCredential.user) {
-        navigate("/");
+        navigate("/Adminpageone");
       }
     } catch (error) {
       toast.error("Bad user credentials");
@@ -37,7 +37,7 @@ export default function SignIn() {
   }
   return (
     <section>
-      <h1 className="text-3xl text-center mt-6 font-bold">Sign In</h1>
+      <h1 className="text-3xl text-center mt-6 font-bold">Admin</h1>
       <div className="flex justify-center flex-wrap items-center px-6 py-12 max-w-6xl mx-auto">
         <div className="md:w-[67%] lg:w-[50%] mb-12 md:mb-6">
           <img
@@ -78,21 +78,12 @@ export default function SignIn() {
               )}
             </div>
             <div className="flex justify-between whitespace-nowrap text-sm sm:text-lg">
-              <p className="mb-6">
-                Don't have a account?
-                <Link
-                  to="/signup"
-                  className="text-red-600 hover:text-red-700 transition duration-200 ease-in-out ml-1"
-                >
-                  Register
-                </Link>
-              </p>
               <p>
                 <Link
-                  to="/Admin"
+                  to="/signin"
                   className="text-blue-600 hover:text-blue-800 transition duration-200 ease-in-out"
                 >
-                  ADMIN
+                  User
                 </Link>
               </p>
             </div>
@@ -101,7 +92,8 @@ export default function SignIn() {
               type="submit"
             >
               Sign in
-            </button>            
+            </button>
+
           </form>
         </div>
       </div>

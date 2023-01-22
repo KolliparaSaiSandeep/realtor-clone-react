@@ -109,14 +109,7 @@ export default function SignUp() {
                   Sign in
                 </Link>
               </p>
-              <p>
-                <Link
-                  to="/forgot-password"
-                  className="text-blue-600 hover:text-blue-800 transition duration-200 "
-                >
-                  Forgot password?
-                </Link>
-              </p>
+
             </div>
             <button
               className="w-full bg-blue-600 text-white px-7 py-3 text-sm font-medium uppercase rounded shadow-md hover:bg-blue-700 transition hover:shadow-lg active:bg-blue-800"
